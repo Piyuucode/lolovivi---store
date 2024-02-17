@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS transaksi (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    menu VARCHAR(50) NOT NULL,
+    quantity INT NOT NULL,
+    total DECIMAL(10,2) NOT NULL
+);

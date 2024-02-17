@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANANACHIPS - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            color: #495057;
+            background-color: #f8f4ff;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between; /* Adjusted to add space between logo and navigation */
+            align-items: center;
+            z-index: 100;
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            height: 30px;
+        }
+
+        header h2 {
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+            margin-left: 10%;
+        }
+
+        nav a:hover {
+            background-color: #dadada;
+            border-radius: 8px;
+        }
+
+        header a {
+            color: #495057;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: .3s;
+            margin: 0 10px;
+        }
+        .nav-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        section {
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 5%;
+        }
+
+        .foto img {
+            max-width: 100%;
+            max-height: 70vh;
+            margin-top: 5%;
+        }
+
+        section h4 {
+            color: #ffffff; /* Adjusted color for better contrast */
+            margin-left: 10%; /* Centered text */
+            max-width: 80%; /* Increased width for better readability */
+            font-size: 1.1em;
+            text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Softened text shadow */
+            margin-bottom: 3%;
+        }
+
+        section h2 {
+            color: #ffffff; /* Adjusted color for better contrast */
+            font-weight: 500;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Softened text shadow */
+        }
+
+        .booking-button {
+            background-color: rgb(147, 194, 147);
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+            padding: 12px 24px; /* Adjusted padding */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .booking-button:hover {
+            background-color: rgb(114, 151, 114);
+        }
+
+        span {
+            color: rgb(147, 194, 147);
+        }
+
+        footer {
+            background-color: rgb(114, 151, 114);
+            color: #fff;
+            padding: 20px; /* Increased padding */
+            text-align: center;
+        }
+
+        @media screen and (max-width: 600px) {
+            .nav-icon {
+                display: block;
+            }
+
+            header {
+                padding-right: 20px; /* Adjusted padding for better spacing */
+            }
+
+            header h2 {
+                margin-left: 7%;
+                font-size: 1.5em; /* Adjusted font size for better visibility */
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                position: absolute;
+                top: 60px; /* Adjusted top position for better spacing */
+                left: 0;
+                background-color: #ffffff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-left: 2%;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .navigation a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (min-width: 601px) {
+            .nav-icon {
+                display: none;
+            }
+
+            nav {
+                display: flex;
+            }
+
+            .navigation a.icon {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .foto {
+                margin-top: 10%; /* adjust margin to position the foto above the header */
+                text-align: center;
+                height: 20%;
+            }
+
+            /* Adjust header height and padding */
+            header {
+                height: 50px;
+                padding: 10px;
+            }
+
+            /* Set the section text to left-align */
+            section {
+                margin-top: 15%;
+                text-align: center;
+                padding: 0 10px;
+            }
+
+            /* Make the h2 and h4 font sizes smaller */
+            section h2 {
+                font-size: 1.5em;
+                justify-content: center;
+            }
+
+            section h4 {
+                font-size: 1em;
+                margin-bottom: 5%;
+                text-align: center;
+            }
+
+            /* Make the booking-button wider and center-aligned */
+            .booking-button {
+                display: block;
+                margin: 0 auto;
+                width: 100px;
+                padding: 10px;
+                font-size: 1.2em;
+            }
+
+            footer {
+                margin-top: 25%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>BANANA<span>CHIPS</span></h2>
+        <div class="nav-icon">
+            <a href="javascript:void(0)" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <nav class="navigation" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="javascript:void(0)" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+    </header>
+
+    <div class="foto">
+        <img src="produk.jpeg" alt="Product">
+    </div>
+
+    <section>
+        <h2>BANANA<span>CHIPS</span></h2>
+        <h4>
+            Banachips yaitu singkatan dari Banana Chips with Melted Chocolate
+            yang diartikan Keripik Pisang dengan Coklat Leleh. Lelehan coklat produk
+            kami tidak menggunakan gula halus yang menjadikan rasa manisnya pas
+            untuk dikonsumsi.
+        </h4>
+        <a class="booking-button" href="contact.html">Contact me</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bananachips. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function myFunction() {
+            var navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>

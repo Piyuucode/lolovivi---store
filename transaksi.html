@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANANACHIPS - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            color: #495057;
+            background-color: #f8f4ff;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between; /* Adjusted to add space between logo and navigation */
+            align-items: center;
+            z-index: 100;
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            height: 30px;
+        }
+
+        header h2 {
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+            margin-left: 10%;
+        }
+
+        nav a:hover {
+            background-color: #dadada;
+            border-radius: 8px;
+        }
+
+        header a {
+            color: #495057;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: .3s;
+            margin: 0 10px;
+        }
+
+        span {
+            color: rgb(147, 194, 147);
+        }
+
+        form {
+            margin-top: 20px;
+            margin-bottom: 80px;
+            max-width: 80%;
+            margin-left: 10%;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.5em;
+            color: #2c3e50;
+        }
+
+        form input,
+        form select {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 8px 50px;
+            font-size: 1em;
+            background-color: rgb(114, 151, 114);
+            color: #ecf0f1;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: rgb(83, 109, 83);
+        }
+
+        #transaction {
+            margin-top: 10%;
+        }
+
+        .container h2 {
+            margin-left: 10%;
+        }
+
+        footer {
+            background-color: rgb(114, 151, 114);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 600px) {
+            .nav-icon {
+                display: block;
+            }
+
+            header {
+                padding-right: 20px; /* Adjusted padding for better spacing */
+            }
+
+            header h2 {
+                margin-left: 7%;
+                font-size: 1.5em; /* Adjusted font size for better visibility */
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                position: absolute;
+                top: 60px; /* Adjusted top position for better spacing */
+                left: 0;
+                background-color: #ffffff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-left: 12%;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .navigation a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (min-width: 601px) {
+            .nav-icon {
+                display: none;
+            }
+
+            nav {
+                display: flex;
+            }
+
+            .navigation a.icon {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            /* Mengatur jarak antara section dengan header */
+            section {
+                padding-top: 20px; /* Ganti nilai ini sesuai keinginan Anda */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>BANANA<span>CHIPS</span></h2>
+        <div class="nav-icon">
+            <a href="javascript:void(0)" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <nav class="navigation" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="javascript:void(0)" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+    </header>
+
+    <section id="transaction">
+        <div class="container">
+            <h2>Form Transaksi</h2>
+            <form action="proses-transaksi.php" method="post">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="address">Alamat:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="menu">Pilih Menu:</label>
+                <select id="menu" name="menu" required>
+                    <option value="matcha">Matcha</option>
+                    <option value="coklat">Coklat</option>
+                </select>
+
+                <label for="quantity">Jumlah:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+
+                <label for="total">Total Harga:</label>
+                <input type="text" id="total" name="total" readonly>
+
+                <button type="submit" class="btn">Order</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bananachips. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to calculate total price based on quantity and menu
+        document.getElementById('quantity').addEventListener('input', updateTotal);
+        document.getElementById('menu').addEventListener('change', updateTotal);
+
+        function updateTotal() {
+            const menu = document.getElementById('menu').value;
+            const quantity = document.getElementById('quantity').value;
+            const pricePerUnit = 5000; // 5 ribu
+            const total = quantity * pricePerUnit;
+
+            document.getElementById('total').value = 'Rp.' + total;
+        }
+    </script>
+
+    <script>
+        function myFunction() {
+            var navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

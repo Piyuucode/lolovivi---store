@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANANACHIPS - Product</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            color: #495057;
+            background-color: #f8f4ff;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between; /* Adjusted to add space between logo and navigation */
+            align-items: center;
+            z-index: 100;
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            height: 30px;
+        }
+
+        header h2 {
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+            margin-left: 10%;
+        }
+
+        nav a:hover {
+            background-color: #dadada;
+            border-radius: 8px;
+        }
+
+        header a {
+            color: #495057;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: .3s;
+            margin: 0 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            margin-bottom: 2em;
+        }
+
+        .menu-item .foto {
+            width: 25%; /* Mengatur lebar gambar menjadi 30% dari container */
+            border-radius: 8px;
+            margin-right: 20px; /* Menambahkan margin di antara gambar dan teks */
+        }
+
+        .menu-item .text {
+            flex: 1; /* Menggunakan sisa ruang yang tersedia untuk teks */
+            max-width: 70%;
+        }
+
+        .menu-item h2 {
+            margin-bottom: 10px;
+        }
+
+        .menu-item p {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1em 2em;
+            margin-top: 1em;
+            background-color: #3498db;
+            color: #ecf0f1;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .order-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-top: 1em;
+            background-color: rgb(114, 151, 114); /* Change button color */
+            color: #ecf0f1;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-left: 2%;
+        }
+
+        .order-btn:hover {
+            background-color: rgb(91, 121, 91); /* Change button color on hover */
+        }
+
+        #menu {
+            padding: 4em 0;
+        }
+
+        .menu-item {
+            display: flex;
+            margin-bottom: 2em;
+            border: 1px solid #ddd; /* Add a border to the menu items */
+            border-radius: 8px; /* Add border-radius for rounded corners */
+            overflow: hidden; /* Hide overflow content */
+            max-width: 80%;
+            margin-left: 10%;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box-shadow for a subtle lift effect */
+            transition: transform 0.3s, box-shadow 0.3s; /* Add transition effect on hover */
+        }
+
+        .menu-item:hover {
+            transform: scale(1.02); /* Scale up the menu item on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a stronger box-shadow on hover */
+            padding: 20px;
+        }
+
+        .menu-item h3 {
+            padding: 15px;
+            margin: 0;
+            background-color: #3498db; /* Set background color for the menu item title */
+            color: #fff; /* Set text color for the menu item title */
+            border-bottom: 1px solid #ddd; /* Add a bottom border for separation */
+            border-radius: 8px 8px 0 0; /* Add border-radius for rounded top corners */
+        }
+
+        .menu-item p {
+            padding: 15px;
+            margin: 0;
+        }
+
+        .menu-item p:last-child {
+            border-top: 1px solid #ddd; /* Add a top border for separation between description and price */
+        }
+
+        .judul {
+            margin-top: 4%;
+            margin-left: 10%;
+        }
+
+        footer {
+            background-color: rgb(114, 151, 114);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .text h2 {
+            margin-left: 2%;
+        }
+
+        span {
+            color: rgb(147, 194, 147);
+        }
+
+        .garis {
+            margin-left: 2%;
+        }
+
+        @media screen and (max-width: 600px) {
+            .nav-icon {
+                display: block;
+            }
+
+            header {
+                padding-right: 20px; /* Adjusted padding for better spacing */
+            }
+
+            header h2 {
+                margin-left: 9%;
+                font-size: 1.5em; /* Adjusted font size for better visibility */
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                position: absolute;
+                top: 60px; /* Adjusted top position for better spacing */
+                left: 0;
+                background-color: #ffffff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-left: 12%;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .navigation a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (min-width: 601px) {
+            .nav-icon {
+                display: none;
+            }
+
+            nav {
+                display: flex;
+            }
+
+            .navigation a.icon {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .judul {
+                margin-left: 15%;
+            }
+
+            .text h2 {
+                margin-left: 5%;
+            }
+
+            .menu-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .menu-item {
+                width: 100%;
+                padding: 15px;
+                box-sizing: border-box;
+            }
+
+            .menu-item .text {
+                margin-top: 10px;
+            }
+
+            .menu-item .foto {
+                margin-top: 30%;
+                width: 30%;
+                height: 30%;
+            }
+
+            .order-btn {
+                width: 100%;
+                padding: 10px;
+                margin-left: 5%;
+            }
+
+            .garis {
+                margin-left: 7%;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>BANANA<span>CHIPS</span></h2>
+        <div class="nav-icon">
+            <a href="javascript:void(0)" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <nav class="navigation" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="javascript:void(0)" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+    </header>
+
+    <section id="menu">
+        <div class="container">
+            <h2 class="judul">Menu Kami</h2>
+            <div class="menu-list">
+                <div class="menu-item">
+                    <img src="coklat.jpeg" alt="Kopi Spesial" class="foto">
+                    <div class="text">
+                        <h2>Coklat</h2>
+                        <hr class="garis" align="left" width="100px">
+                        <p>Bananachip dengan coklat adalah camilan yang terbuat dari irisan pisang yang kemudian dicelupkan ke dalam coklat leleh. Proses ini menciptakan kombinasi unik antara manisnya pisang dan kelezatan coklat. Coklat dapat memberikan sentuhan creamy dan gurih yang menyempurnakan rasa pisang yang alami.</p>
+                            <a href="transaksi.html" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="matcha.jpeg" alt="Cappuccino" class="foto">
+                    <div class="text">
+                        <h2>Matcha</h2>
+                        <hr class="garis" align="left" width="100px">
+                        <p>Bananachip dengan matcha adalah camilan yang terbuat dari irisan pisang yang dilumuri dengan bubuk matcha, yang merupakan bubuk teh hijau khas Jepang. Proses ini menghasilkan paduan rasa antara manisnya pisang dengan rasa pahit dan sedikit gurih dari matcha. Bananachip dengan matcha memberikan pengalaman unik dengan sentuhan tradisional Jepang pada camilan pisang.</p>
+                            <a href="transaksi.html" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bananachips. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function myFunction() {
+            var navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

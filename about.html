@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANANACHIPS - About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            color: #495057;
+            background-color: #f8f4ff;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between; /* Adjusted to add space between logo and navigation */
+            align-items: center;
+            z-index: 100;
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            height: 30px;
+        }
+
+        header h2 {
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+            margin-left: 10%;
+        }
+
+        nav a:hover {
+            background-color: #dadada;
+            border-radius: 8px;
+        }
+
+        header a {
+            color: #495057;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: .3s;
+            margin: 0 10px;
+        }
+
+        footer {
+            background-color: rgb(114, 151, 114);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            padding: 4em 0;
+            text-align: center;
+            margin-top: 5%;
+            margin-bottom: 3%;
+        }
+
+        section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        section p {
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+        }
+
+        .container {
+            max-width: 80%;
+            margin-left: 10%;
+        }
+
+        span {
+            color: rgb(147, 194, 147);
+        }
+
+        @media screen and (max-width: 600px) {
+            .nav-icon {
+                display: block;
+            }
+
+            header {
+                padding-right: 20px; /* Adjusted padding for better spacing */
+            }
+
+            header h2 {
+                margin-left: 7%;
+                font-size: 1.5em; /* Adjusted font size for better visibility */
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                position: absolute;
+                top: 60px; /* Adjusted top position for better spacing */
+                left: 0;
+                background-color: #ffffff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-left: 12%;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .navigation a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (min-width: 601px) {
+            .nav-icon {
+                display: none;
+            }
+
+            nav {
+                display: flex;
+            }
+
+            .navigation a.icon {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>BANANA<span>CHIPS</span></h2>
+        <div class="nav-icon">
+            <a href="javascript:void(0)" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <nav class="navigation" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="javascript:void(0)" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About us</h2>
+            <p>Selamat datang di dunia Bananachips, tempat di mana kelezatan bertemu kreativitas! Kami adalah tim yang penuh semangat dan berdedikasi, menghadirkan kepada Anda pengalaman unik melalui penjualan Bananachips berkualitas tinggi.</p>
+            <p>Kami percaya bahwa camilan sehat dapat menjadi pilihan yang lezat dan memuaskan. Dengan menyajikan pisang yang segar dan berkualitas tinggi, kami menghadirkan Bananachips yang tidak hanya lezat tetapi juga memberikan nilai gizi positif.</p>
+            <p>Bananachips kami dihasilkan dari pisang pilihan yang dipotong tipis dan diolah dengan teliti. Setiap irisan pisang diperlakukan dengan cinta dan keahlian, menciptakan camilan yang krispi, manis, dan memikat. Tidak hanya itu, kami menawarkan dua varian yang menarik: Bananachips dilumuri dengan coklat leleh dan yang dilumuri dengan bubuk matcha. Setiap varian memiliki karakteristik rasa yang unik, memuaskan selera penggemar berbagai cita rasa.</p>
+            <p>Kami berkomitmen untuk menyajikan produk berkualitas tinggi tanpa tambahan bahan kimia berbahaya. Bananachips kami dibuat dengan hati-hati, memastikan bahwa setiap kemasan mengandung kelezatan alami dan kesehatan yang dapat dinikmati oleh seluruh keluarga.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bananachips. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function myFunction() {
+            var navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>
